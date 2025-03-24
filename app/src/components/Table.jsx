@@ -1,30 +1,45 @@
-
+import { useContext } from "react";
 import data from "../utils/data.json";
 import ProgressBar from "../components/ProgressBar";
-const Table = () => (
-<div>  <table>
+import Pagedown from "../assets/PageDown.png";
+import View from "../assets/View.png";
+import Cart from "../Context/Context";
+
+const Table = () => {
+    const {Tabledata,setTableData}=useContext(Cart);
+ 
+ 
+ return (
+<div>  
+  
+  <table>
     <thead>
       <tr>
         <th>Execution ID</th>
         <th>Host Name</th>
+        <th>IP</th>
         <th>Execution Name</th>
         <th>Start Date</th>
         <th>Execution State</th>
         <th>Type</th>
         <th>Executed By</th>
         <th>Logs</th>
+        
       </tr>
     </thead>
     <tbody>
-      {data.map((item) => (
+      {Tabledata.map((item) => (
         <tr key={item.executionId}>
           <td>{item.executionId}</td>
           <td>{item.hostName}</td>
+          <td>{item.hostIp}</td>
           <td>{item.executionName}</td>
           <td>{new Date(item.startDate).toLocaleString()}</td>
-          <td>{<ProgressBar percent={item.executionState.percentage} />}{item.executionState.percentage}</td>
+          <td><div className="progressPercent">{<ProgressBar percent={item.executionState.percentage} />}{item.executionState.percentage}%</div></td>
           <td>{item.executionState.type}</td>
-          <td>{item.executedBy}</td>
+          <td><div className="executedBy">{item.executedBy}</div></td>
+          <td>{<img src={View}/>}{<img src={Pagedown}/>}</td>
+
         </tr>
       ))}
     </tbody>
@@ -33,5 +48,5 @@ const Table = () => (
   
   </div>
 );
-
+}
 export default Table;

@@ -3,6 +3,7 @@ const ProgressBar=({percent})=>{
 <div className="progress" style={{width: `${percent}%`}}>
     
 </div>
+
     </div>
 }
 
