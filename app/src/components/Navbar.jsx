@@ -12,11 +12,11 @@ const Navbar=()=>{
       <div className="k">⌘K</div>
       </div>
     <div className="profileDetails">
-    <img src={notif} className="notif"/>
     <img src={alert} className="alert"/>
+    <img src={notif} className="notif"/>
     <div className="user-menu">
-     <span>John Doe</span>   
-    <img src={potrait}/>
+     <span className="username">John Doe</span>   
+    <img src={potrait} className="user-img"/>
     </div>
     </div>
 

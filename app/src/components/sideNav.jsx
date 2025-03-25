@@ -31,7 +31,7 @@ const SideNav=()=>{
      
      <div className="row">  
      <img src={reports}/>
-     <span>Reports</span>
+     <span className="report">Reports</span>
      </div>
 
      <div className="row">  

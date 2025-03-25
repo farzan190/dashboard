@@ -14,7 +14,7 @@ const Toolbar = () => {
 
   function filterDataByPeriod(data, period) {
     const now = new Date();
-    now.setHours(23, 59, 59, 999); // Ensure accurate comparison
+    now.setHours(23, 59, 59, 999); 
 
     return data.filter(item => {
       const startDate = new Date(item.startDate);
@@ -44,13 +44,13 @@ const Toolbar = () => {
   };
 
   const fuzzySearch = (query, data) => {
-    if (!query.trim()) return data; // If empty, return all data
+    if (!query.trim()) return data; 
   
     const fuse = new Fuse(data, {
       keys: ["executionName", "executedBy", "startDate", "status"],
-      threshold: query.length < 5 ? 0.3 : 0.1, // 🔥 Stricter match for longer queries
-      shouldSort: true, // Sort better matches first
-      includeScore: true, // Helps prioritize exact matches
+      threshold: query.length < 5 ? 0.3 : 0.1, 
+      shouldSort: true, 
+      includeScore: true, 
     });
   
     return fuse.search(query).map(result => result.item);

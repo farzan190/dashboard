@@ -7,6 +7,9 @@ import Toolbar from "./components/Toolbar";
 import Cart from "./Context/Context";
 import SideNav from "./components/sideNav";
 import Infobar from "./components/infobar";
+import leftArrow from "../src/assets/leftarrow.svg";
+import rightArrow from "../src/assets/rightarrow.svg";
+
 
 function App() {
   const {Tabledata,setTableData}=useContext(Cart);
@@ -23,13 +26,19 @@ return <div>
   <div className="right-page">
   <div className="info">
     <span className="hosts">Hosts</span>
-    <span className="hosts">Projects</span>
+    <span className="projects">Projects</span>
 
   </div>
 <Toolbar/>
 <Table/>
 </div>
+<div className="pagination">
+ <div className="arrows"> <img src={leftArrow}/>
+  <img src={rightArrow}/>
+  </div>
+  </div>
 </div>
+
 </div>
 
 </div>

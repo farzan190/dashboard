@@ -7,6 +7,7 @@ import Cart from "../Context/Context";
 
 const Table = () => {
     const {Tabledata,setTableData}=useContext(Cart);
+    const colors = ["#29CF57", "#E1C844", "#EE5B5B"];
  
  
  return (
@@ -28,14 +29,14 @@ const Table = () => {
       </tr>
     </thead>
     <tbody>
-      {Tabledata.map((item) => (
+      {Tabledata.map((item,index) => (
         <tr key={item.executionId}>
-          <td>{item.executionId}</td>
+          <td><div className="executionId">{item.executionId}</div></td>
           <td>{item.hostName}</td>
           <td>{item.hostIp}</td>
           <td>{item.executionName}</td>
           <td>{new Date(item.startDate).toLocaleString()}</td>
-          <td><div className="progressPercent">{<ProgressBar percent={item.executionState.percentage} />}{item.executionState.percentage}%</div></td>
+          <td><div className="progressPercent">{<ProgressBar percent={item.executionState.percentage}  backgroundColor={colors[index % 3]}  />}{item.executionState.percentage}%</div></td>
           <td>{item.executionState.type}</td>
           <td><div className="executedBy">{item.executedBy}</div></td>
           <td>{<img src={View}/>}{<img src={Pagedown}/>}</td>
