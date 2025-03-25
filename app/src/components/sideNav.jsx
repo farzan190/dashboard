@@ -1,5 +1,8 @@
 import dashboard from "../assets/Dashboard.svg";
 import environment from "../assets/Environments.svg";
+import arrowdown from "../assets/arrowdown.svg";
+import pointarrow from "../assets/pointarrow.svg";
+
 import execution from "../assets/execution.svg";
 import configuration from "../assets/configuration.svg";
 import reports from "../assets/reports.svg";
@@ -17,6 +20,8 @@ const SideNav=()=>{
      <div className="row">  
      <img src={environment}/>
      <span>Environments</span>
+     <img src={pointarrow} className="arrowdown"/>
+
      </div>
      
      <div className="row">  
@@ -37,6 +42,8 @@ const SideNav=()=>{
      <div className="row">  
      <img src={admin}/>
      <span>Administration</span>
+     <img src={pointarrow} className="arrowdown"/>
+
      </div>
 
     </nav>
